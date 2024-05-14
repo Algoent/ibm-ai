@@ -1,0 +1,749 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #3a5ea6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #3a5ea6;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #3a5ea6;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #3a5ea6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #f1f1f1;
+  color: #3a5ea6;
+}
+
+.back-to-top:hover i {
+  color: #3a5ea6;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+#header.header-scrolled,
+#header.header-inner-pages {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 55px;
+  transition: 0.3s;
+}
+
+@media (max-width: 575px) {
+  #header .logo img {
+    max-height: 50px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: auto;
+  background: url("../img/IA-IBM-landing-01a-bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#hero .container {
+  padding-top: 72px;
+}
+
+#hero h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 56px;
+  color: #000;
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 0px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: -1px 2px 2px rgba(0,0,0,0.6);
+}
+#hero p {
+  color: #000;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+#hero .btn-get-started {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: block;
+  padding: 10px 28px 11px 28px;
+  border:3px solid #1a5eaa;
+  transition: 0.5s;
+  margin: 0px auto;
+  color: #fff;
+  background: #1a5eaa;
+}
+
+#hero .btn-get-started:hover {
+  background: none;
+  border: 3px solid #1a5eaa;
+  color: #1a5eaa;
+}
+
+#hero .btn-watch-video {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  margin: 10px 0 0 25px;
+  color: #fff;
+  line-height: 1;
+}
+
+#hero .btn-watch-video i {
+  line-height: 0;
+  color: #fff;
+  font-size: 32px;
+  transition: 0.3s;
+  margin-right: 8px;
+}
+
+#hero .btn-watch-video:hover i {
+  color: #47b2e4;
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    text-align: center;
+  }
+
+  #hero .animated {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+  }
+
+  #hero h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero .btn-get-started {
+    font-size: 16px;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f3f5fa;
+}
+
+.section-title {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 45px;
+  font-weight: 300;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  color: #000;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+.section-title-popup {
+  text-align: center;
+  padding: 20px 20px 0px 20px;
+}
+
+.section-title-popup h2 {
+  font-size: 30px;
+  position: relative;
+  color: #000;
+  font-weight: 600;
+}
+.section-title-popup p {
+  font-size: 18px;
+  color: #000;
+}
+
+
+/*--------------------------------------------------------------
+# About Us
+--------------------------------------------------------------*/
+.about .content p {
+  font-size: 18px;
+}
+.about .content p.azul {
+  color: #00bceb;
+  font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+# Fechas Section
+--------------------------------------------------------------*/
+.fechas{
+  padding: 30px 0;
+}
+
+.fechas .icon-box {
+  padding: 30px 30px;
+  transition: all ease-in-out 0.4s;
+  background: #d9d9d9;
+  width: 100%;
+  border-radius: 0px;
+  margin: 10px;
+}
+
+.fechas .icon-box .icon {
+  padding: 0px 0;
+  text-align: center;
+}
+
+.fechas .icon-box .icon img {
+  max-height: 100px;
+}
+
+.fechas .icon-box h4 {
+  font-family: "IBM Plex Sans", sans-serif;
+  padding-top: 0px;
+  margin: 0;
+  font-size: 23px;
+  font-weight: 300;
+  text-align: center;
+  color: #3a5ea6;
+}
+.fechas .icon-box h5 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+.fechas .icon-box p {
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 15px;
+}
+.fechas .icon-box td{
+  border-left:1px solid black;
+  padding-left: 10px;
+}
+.fechas .icon-box td.azul{
+  color: #00bceb;
+  padding-left: 0;
+  padding-right: 10px;
+  border: none;
+}
+.fechas .cta-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+.fechas .cta-btn h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  padding: 0px 30px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  color: #00bceb;
+  line-height: 50px;
+}
+.fechas .cta-btn h1 span{
+  display: block;
+  font-size: 60px;
+}
+.fechas .cta-btn a {
+  font-family: "IBM Plex Sans", sans-serif;
+  background: #3a5ea6;
+  border: 2px solid #3a5ea6;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 30px;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  margin: 10px 20px;
+}
+.fechas .cta-btn a:hover {
+  background: none;
+  color:  #3a5ea6;
+  border: 2px solid #3a5ea6;
+}
+.fechas .speaker-text h2{
+  font-size: 50px;
+  font-weight: 300;
+  color: #000;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.fechas .speaker-text h3{
+  font-size: 23px;
+  color: #000;
+  padding: 20px 0px;
+  max-width: 80%;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .fechas .title h2{
+    font-size: 50px;
+  }
+  .fechas .cta-btn{
+    flex-direction: column;
+  }
+  .fechas .cta-btn h1 {
+    padding-bottom: 20px;
+  }
+  .fechas .speaker-text h2{
+    max-width: 90%;
+    font-size: 35px;
+    padding-top: 20px;
+  }
+  .fechas .speaker-text h3{
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .fechas .title h2{
+    font-size: 30px;
+  }
+  .fechas .cta-btn h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .fechas .cta-btn h1 span{
+    font-size: 40px;
+  }
+  .fechas .cta-btn a {
+    font-size: 20px;
+  }
+  .fechas .speaker-text h2{
+    font-size: 30px;
+  }
+  .fechas .speaker-text h3{
+    font-size: 23px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Formulario Section
+--------------------------------------------------------------*/
+
+.php-email-form {
+  width: 100%;
+  padding: 30px;
+}
+
+.php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 0px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #df1529;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #059652;
+  border-top-color: #fff;
+  animation: animate-loading 1s linear infinite;
+}
+
+.php-email-form label{
+  color: #000;
+  font-size: 16px;
+}
+.php-email-form input,
+.php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 17px;
+}
+
+.php-email-form input[type=text],
+.php-email-form input[type=email],
+.php-email-form input[type=password],
+.php-email-form textarea {
+  padding: 5px 15px;
+  background: #fff;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.php-email-form input:read-only{
+  color:#cacaca;
+}
+
+.php-email-form input[type=text]:focus,
+.php-email-form input[type=email]:focus,
+.php-email-form input[type=password]:focus,
+.php-email-form textarea:focus {
+  border-color: #00bceb;
+  background: #f1f1f1;
+}
+
+.php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.php-email-form button[type=submit] {
+  background: #1a5eaa;
+  border: 0;
+  padding: 10px 45px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 0px;
+  font-size: 20px;
+  border: 2px solid #1a5eaa;
+  font-weight: 600;
+}
+
+.php-email-form button[type=submit]:hover {
+  background: none;
+  border: 2px solid #1a5eaa;
+  color: #1a5eaa;
+}
+
+.php-email-form input[type="checkbox"]{
+  position: absolute;
+  left:-999px;
+}
+
+.php-email-form input[type="checkbox"]:focus + span{
+  color:#000000;
+}
+.php-email-form label{
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.php-email-form label input[type="checkbox"] + span{
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.php-email-form label input[type="checkbox"] + span:before { 
+  font-family: FontAwesome;
+  content: "\f096";  
+  display: inline-block;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 16px;
+  text-align:center;
+  letter-spacing: 2px;
+  line-height: 16px;
+  }
+.php-email-form label input[type="checkbox"]:checked + span:before { 
+  content: "\f046";letter-spacing: 3px; 
+} /* checked icon */
+.php-email-form label input[type="checkbox"]:indeterminate + span:before{
+  content: "\f147";letter-spacing: 6px;
+}
+
+/*--------------------------------------------------------------
+# Title Gracias
+--------------------------------------------------------------*/
+
+.title-gracias{
+  padding: 120px 40px;
+  background: #fff;  
+}
+.title-gracias h4{
+  color: #3a5ea6;
+  font-size: 50px; 
+  text-align: center;
+  padding: 0 40px;
+  font-weight: 400;
+}
+.title-gracias p{
+  color: #161e2d;
+  font-size: 30px; 
+  text-align: center;
+  padding: 0 40px;
+}
+
+.title-gracias .cta-btn {
+  font-weight: 500;
+  font-size: 20px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 0px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 3px solid #3a5ea6;
+  color: #fff;
+  background: #3a5ea6;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-decoration: none;
+}
+
+.title-gracias .cta-btn i{
+  font-size: 22px;
+}
+
+.title-gracias .cta-btn:hover {
+  background: none;
+  border: 3px solid #3a5ea6;
+  color: #3a5ea6;
+}
+
+@media (max-width: 991px) {
+  .title-gracias{
+    padding: 80px 30px;  
+  }
+  .title-gracias h4{
+    font-size: 30px; 
+  }
+  .title-gracias p{
+    font-size: 22px; 
+    padding: 0px;
+  }
+  .title-gracias .cta-btn {
+    font-size: 18px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  font-size: 14px;
+  background: #212121;
+}
+
+#footer .footer-bottom {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+}
+
+#footer .footer-bottom .social-links{
+  margin-bottom: 10px;
+}
+
+#footer .footer-bottom .social-links a {
+  font-size: 15px;
+  display: inline-block;
+  background: #fff;
+  color: #112129;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+
+#footer .footer-bottom .social-links a:hover {
+  color: #f39122;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  float: left;
+  font-size: 12px;
+}
+
+#footer .credits {
+  float: right;
+}
+
+#footer .credits img {
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  #footer .footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #footer .copyright,
+  #footer .credits {
+    text-align: center;
+    float: none;
+  }
+
+  #footer .credits {
+    padding-top: 4px;
+  }
+}
